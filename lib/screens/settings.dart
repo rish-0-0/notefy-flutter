@@ -17,7 +17,7 @@ class _SettingsPageState extends State<SettingsPage> {
           centerTitle: true,
         ),
         body: Column(
-          children: <Widget>[Text("Hi")],
+          children: <Widget>[Text("Settings")],
         ));
   }
 }
