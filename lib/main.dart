@@ -86,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         tooltip: 'Increment',
         child: Icon(Icons.add),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.blue,
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
