@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:notefy/helpers/enterexitroute.dart';
+import 'package:notefy/screens/settings.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Notefy'),
     );
   }
 }
@@ -75,7 +77,20 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title:
+            Text(widget.title, style: TextStyle(fontWeight: FontWeight.normal)),
+        centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.settings, color: Colors.white),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  EnterExitRoute(
+                      enterPage: SettingsPage(), exitPage: this.widget));
+            },
+          )
+        ],
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -111,6 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: Icon(Icons.add),
+        backgroundColor: Colors.black,
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
